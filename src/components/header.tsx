@@ -4,7 +4,7 @@ import ModeToggle from "@/components/mode_toogle";
 
 export default function Header() {
   return (
-    <header className="z-10 w-full flex justify-center mb-6 max-w-[350px] text-sm sm:max-w-4xl md:max-w-4xl lg:max-w-5xl">
+    <header className="z-10 w-full flex justify-center max-w-[350px] text-sm sm:max-w-4xl md:max-w-4xl lg:max-w-5xl">
       <nav className="flex w-full items-center justify-between space-x-2">
         {/* <AppearanceToggleDropdown /> */}
         <ModeToggle />
