@@ -3,13 +3,17 @@
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Button } from "@/components/ui/button";
 
 export default function ModeToggle() {
   const { theme, setTheme } = useTheme();
   const [dark, setDark] = useState(false);
+
+  React.useEffect(() => {
+    setTheme('dark');
+  }, []);
 
   function handleChangeTheme() {
     setTheme(theme === "dark" ? "light" : "dark");
