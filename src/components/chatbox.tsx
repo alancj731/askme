@@ -85,7 +85,7 @@ export default function ChatBox() {
                     <User />
                   </div>
                 )}
-                <div className="py-2">
+                <div className="py-2 leading-8">
                   {typing && index === typingIndex ? typingOutput : m.content}
                 </div>
               </div>
@@ -98,7 +98,7 @@ export default function ChatBox() {
       <div className="sticky bottom-0 z-10 bg-background pt-4 pb-4 shadow-lg mx-auto w-full">
         <form onSubmit={myHandleSubmit} className="flex justify-center">
           <input
-            className="z-20 p-2 w-full rounded border border-zinc-300 shadow-xl md:max-w-2xl dark:border-zinc-800 dark:bg-zinc-900"
+            className="z-20 p-2 w-full rounded border border-zinc-300 shadow-xl md:max-w-3xl dark:border-zinc-800 dark:bg-zinc-900"
             value={input}
             placeholder="Anything about me ..."
             onChange={myHandleInputChange}
