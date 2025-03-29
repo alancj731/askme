@@ -61,10 +61,10 @@ export default function ChatBox() {
   }, [messages]);
 
   return (
-    <div className="flex flex-col h-[calc(90vh-2rem)] md:w-1/2 scrollbar-hide bg-red-500">
+    <div className="flex flex-col h-[calc(90vh-2rem)] md:w-1/2 scrollbar-hide">
       <div
         ref={messagesContainerRef}
-        className="z-15 flex-1 overflow-y-auto max-h-[calc(90vh-4rem)] scrollbar-hide md:w-3/4 bg-yellow-500 md:mx-auto scrollbar-none"
+        className="z-15 flex-1 overflow-y-auto max-h-[calc(90vh-4rem)] scrollbar-hide md:w-full mb-4 md:max-w-3xl md:mx-auto scrollbar-none"
       >
         <div className="mx-auto">
           <div className="flex flex-col space-y-2">
@@ -95,10 +95,10 @@ export default function ChatBox() {
         </div>
       </div>
 
-      <div className="sticky bottom-0 z-10 bg-background pt-4 pb-4 shadow-lg">
+      <div className="sticky bottom-0 z-10 bg-background pt-4 pb-4 shadow-lg mx-auto w-full">
         <form onSubmit={myHandleSubmit} className="flex justify-center">
           <input
-            className="z-20 p-2 w-full rounded border border-zinc-300 shadow-xl md:w-1/2 dark:border-zinc-800 dark:bg-zinc-900"
+            className="z-20 p-2 w-full rounded border border-zinc-300 shadow-xl md:max-w-2xl dark:border-zinc-800 dark:bg-zinc-900"
             value={input}
             placeholder="Anything about me ..."
             onChange={myHandleInputChange}
