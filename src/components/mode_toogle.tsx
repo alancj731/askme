@@ -11,7 +11,7 @@ export default function ModeToggle() {
   const { theme, setTheme } = useTheme();
   const [dark, setDark] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTheme('dark');
   }, []);
 
