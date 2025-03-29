@@ -1,5 +1,7 @@
 import { createTogetherAI, type TogetherAIProvider } from "@ai-sdk/togetherai";
 import { generateText, streamText } from "ai";
+import { Message } from "@ai-sdk/react";
+
 
 const apiKey = process.env.NEXT_PUBLIC_TOGETHER_AI_API_KEY || "";
 const MODEL =
@@ -51,7 +53,7 @@ export class TogetherAiService {
     }
   }
 
-  async streamTextFromAI(messages: any[]) {
+  async streamTextFromAI(messages: Message[]) {
     if (!this.togetherai) {
       throw new Error("TogetherAi is not initialized");
     }

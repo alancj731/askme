@@ -2,7 +2,7 @@ import { default as Myself } from "@/components/myself";
 import { Message, useChat } from "@ai-sdk/react";
 import { useEffect, useState, useRef } from "react";
 import { User } from "lucide-react";
-import { Loading } from "./loading";
+import Loading from "@/components/loading";
 
 const initMessage: Message = {
   id: "1",

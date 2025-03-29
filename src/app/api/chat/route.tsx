@@ -10,10 +10,6 @@ export async function POST(req: NextRequest) {
     return new Response("No messages provided", { status: 400 });
   }
 
-  const lastMessage = messages[messages.length - 1];
-
-  const docContext = "No context provided";
-
   const sysPrompt1 = 
   `You are a candidate for a job opening, try to answer questions about yourself based on the following background information.
     
