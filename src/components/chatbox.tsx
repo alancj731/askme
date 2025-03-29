@@ -6,7 +6,7 @@ import { User } from "lucide-react";
 const initMessage: Message = {
   id: "1",
   role: "assistant",
-  content: "Hi, there. How are you doing today?",
+  content: "Hi, I'm Jian. How are you doing today?",
 };
 
 export default function ChatBox() {
@@ -61,12 +61,12 @@ export default function ChatBox() {
   }, [messages]);
 
   return (
-    <div className="flex flex-col h-[calc(90vh-2rem)] w-full scrollbar-hide">
+    <div className="flex flex-col h-[calc(90vh-2rem)] w-fullscrollbar-hide">
       <div
         ref={messagesContainerRef}
         className="z-15 flex-1 overflow-y-auto max-h-[calc(90vh-4rem)]"
       >
-        <div className="md:w-1/2 md:mx-auto">
+        <div className="md:w-1/2 mx-auto">
           <div className="flex flex-col space-y-2">
             {messages.map((m, index) => (
               <div
@@ -95,7 +95,7 @@ export default function ChatBox() {
         </div>
       </div>
 
-      <div className="sticky bottom-0 z-10 bg-background pt-4 pb-4 shadow-lg">
+      <div className="sticky bottom-0 z-10 bg-background pt-4 pb-4 shadow-lg md:mr-3">
         <form onSubmit={myHandleSubmit} className="flex justify-center">
           <input
             className="z-20 p-2 w-full rounded border border-zinc-300 shadow-xl md:w-1/2 dark:border-zinc-800 dark:bg-zinc-900"
