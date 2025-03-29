@@ -61,12 +61,12 @@ export default function ChatBox() {
   }, [messages]);
 
   return (
-    <div className="flex flex-col h-[calc(90vh-2rem)] w-fullscrollbar-hide">
+    <div className="flex flex-col h-[calc(90vh-2rem)] md:w-1/2 scrollbar-hide bg-red-500">
       <div
         ref={messagesContainerRef}
-        className="z-15 flex-1 overflow-y-auto max-h-[calc(90vh-4rem)]"
+        className="z-15 flex-1 overflow-y-auto max-h-[calc(90vh-4rem)] scrollbar-hide md:w-3/4 bg-yellow-500 md:mx-auto scrollbar-none"
       >
-        <div className="md:w-1/2 mx-auto">
+        <div className="mx-auto">
           <div className="flex flex-col space-y-2">
             {messages.map((m, index) => (
               <div
@@ -95,7 +95,7 @@ export default function ChatBox() {
         </div>
       </div>
 
-      <div className="sticky bottom-0 z-10 bg-background pt-4 pb-4 shadow-lg md:mr-3">
+      <div className="sticky bottom-0 z-10 bg-background pt-4 pb-4 shadow-lg">
         <form onSubmit={myHandleSubmit} className="flex justify-center">
           <input
             className="z-20 p-2 w-full rounded border border-zinc-300 shadow-xl md:w-1/2 dark:border-zinc-800 dark:bg-zinc-900"
