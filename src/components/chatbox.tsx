@@ -19,7 +19,7 @@ export default function ChatBox() {
     handleSubmit,
     status,
   } = useChat();
-  const [typingIndex, setTypingIndex] = useState(0);
+  const [typingIndex] = useState(0);
   const [typing, setTyping] = useState(true);
   const [typingOutput, setTypingOutput] = useState<string>("");
   const messagesContainerRef = useRef<HTMLDivElement>(null);
