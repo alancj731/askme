@@ -125,3 +125,13 @@
   display: none;  /* Chrome/Safari/Webkit */
 }
 
+@keyframes typing {
+  0% { opacity: 0.5; transform: translateY(0px); }
+  50% { opacity: 1; transform: translateY(-2px); }
+  100% { opacity: 0.5; transform: translateY(0px); }
+}
+
+.typing-dot {
+  animation: typing 1.5s ease-in-out infinite;
+}
+

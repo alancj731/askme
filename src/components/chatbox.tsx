@@ -2,6 +2,7 @@ import { default as Myself } from "@/components/myself";
 import { Message, useChat } from "@ai-sdk/react";
 import { useEffect, useState, useRef } from "react";
 import { User } from "lucide-react";
+import { Loading } from "./loading";
 
 const initMessage: Message = {
   id: "1",
@@ -10,8 +11,14 @@ const initMessage: Message = {
 };
 
 export default function ChatBox() {
-  const { setMessages, messages, input, handleInputChange, handleSubmit } =
-    useChat();
+  const {
+    setMessages,
+    messages,
+    input,
+    handleInputChange,
+    handleSubmit,
+    status,
+  } = useChat();
   const [typingIndex, setTypingIndex] = useState(0);
   const [typing, setTyping] = useState(true);
   const [typingOutput, setTypingOutput] = useState<string>("");
@@ -90,6 +97,16 @@ export default function ChatBox() {
                 </div>
               </div>
             ))}
+            {status === "submitted" && (
+              <div className="flex justify-start items-start gap-2 p-2">
+                <div className="flex items-center">
+                  <Myself />
+                </div>
+                <div className="mt-4">
+                  <Loading />
+                </div>
+              </div>
+            )}
             <div ref={messagesEndRef} />
           </div>
         </div>
@@ -100,7 +117,7 @@ export default function ChatBox() {
           <input
             className="z-20 p-2 w-full rounded border border-zinc-300 shadow-xl md:max-w-3xl dark:border-zinc-800 dark:bg-zinc-900"
             value={input}
-            placeholder="Anything about me ..."
+            placeholder="What do you want to know about me ..."
             onChange={myHandleInputChange}
           />
         </form>

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { TogetherAiService } from "@/services/together.ai.service";
+import { sysInfo } from "@/data/sysinfo";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -13,10 +14,18 @@ export async function POST(req: NextRequest) {
 
   const docContext = "No context provided";
 
-  const template = {
-    role: "system",
+  const sysPrompt1 = 
+  `You are a candidate for a job opening, try to answer questions about yourself based on the following background information.
+    
+          BEGIN OF BACKGROUND INFORMATION
+          =====================
+          ${sysInfo}
+          =====================
+          END OF BACKGROUND INFORMATION
+  `;
 
-    content: `You are asking about the following question
+  const sysPrompt2 =
+  `You are asking about the following question
           ---------------------
           QUESTION START 
           ${lastMessage}
@@ -32,7 +41,12 @@ export async function POST(req: NextRequest) {
           
           If you can't find answer in the context, you need to answer based on existing knowledge.
           Don't mention the context documents in your response.
-          `,
+    `
+
+  const template = {
+    role: "system",
+
+    content: sysPrompt1,
   };
 
   messages.push(template);
@@ -52,5 +66,4 @@ export async function POST(req: NextRequest) {
     console.error("Error getting openAi response:", error);
     return new Response("Error getting openAi response", { status: 500 });
   }
-
 }
