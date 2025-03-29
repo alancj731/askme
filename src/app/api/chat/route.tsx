@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { TogetherAiService } from "@/services/together.ai.service";
 import { sysInfo } from "@/data/sysinfo";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  const { id, messages } = body;
+  const { messages } = body;
 
   if (!messages || messages.length === 0) {
     return new Response("No messages provided", { status: 400 });
@@ -23,25 +23,6 @@ export async function POST(req: NextRequest) {
           =====================
           END OF BACKGROUND INFORMATION
   `;
-
-  const sysPrompt2 =
-  `You are asking about the following question
-          ---------------------
-          QUESTION START 
-          ${lastMessage}
-          QUESTION END
-          --------------------- 
-          
-          Here are some context documents:
-          ---------------------
-          CONTEXT START 
-          ${docContext}
-          CONTEXT END
-          ---------------------
-          
-          If you can't find answer in the context, you need to answer based on existing knowledge.
-          Don't mention the context documents in your response.
-    `
 
   const template = {
     role: "system",
