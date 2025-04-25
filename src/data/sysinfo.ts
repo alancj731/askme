@@ -49,7 +49,10 @@ export const sysInfo : string = `
       "type": "Full Time",
       "duration": "Dec 2017 - Aug 2021 (China)",
       "achievements": [
-        "Managed overall company operations, leading to significant market share and revenue growth."
+        "Served as a Technical Support Engineer at Corning Cable Systems, providing expert assistance on fiber optic products and solutions. 
+        Responsible for troubleshooting technical issues, guiding customers through installations and configurations, 
+        and collaborating with engineering teams to resolve complex problems. Focused on delivering excellent customer service 
+        and ensuring the reliable performance of network systems."
       ]
     }
   ],
