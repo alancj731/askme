@@ -22,8 +22,8 @@ export default function Home() {
           />
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center italic">
-        Powered by TogetherAI
+      <footer className="row-start-3 w-full px-4 py-2 flex gap-4 flex-wrap items-center justify-center italic text-sm md:text-base text-center break-words">
+        This demo uses TogetherAI free tier, which can be slow or unresponsive at times.
       </footer>
     </div>
   );
